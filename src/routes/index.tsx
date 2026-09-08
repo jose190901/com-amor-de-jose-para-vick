@@ -80,7 +80,7 @@ function Index() {
   const idx = useRef(0);
 
   const fugir = useCallback(() => {
-    setNaoText(recados[idx.current++ % recados.length]);
+    setNaoText(recados[idx.current++ % recados.length] ?? "não 🙈");
     const w = window.innerWidth;
     const h = window.innerHeight;
     setNaoPos({

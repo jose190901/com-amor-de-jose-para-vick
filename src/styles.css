@@ -18,7 +18,50 @@
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
  */
 
+@theme {
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-rise: rise 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  --animate-burst: burst 2.6s ease-out forwards;
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-4deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(4deg);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes burst {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x), var(--y)) rotate(70deg) scale(1.2);
+    }
+  }
+}
+
 @theme inline {
+  --color-blush: var(--blush);
+  --color-bubblegum: var(--bubblegum);
+  --color-cherry: var(--cherry);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,9 +105,14 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 1.25rem;
+  --blush: oklch(0.94 0.045 350);
+  --bubblegum: oklch(0.86 0.09 348);
+  --cherry: oklch(0.58 0.19 12);
+  --cream: oklch(0.98 0.015 60);
+  --ink: oklch(0.36 0.07 356);
+  --background: oklch(0.97 0.025 350);
+  --foreground: oklch(0.36 0.07 356);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);

@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useRef, useState } from "react";
 
 import kitty from "@/assets/kitty.png";
-import comeco from "@/assets/vick-185849.jpg.asset.json";
-import juntos1 from "@/assets/vick-185925.jpg.asset.json";
-import juntos2 from "@/assets/vick-185948.jpg.asset.json";
-import ranked from "@/assets/vick-185746.jpg.asset.json";
-import noite from "@/assets/vick-190000.jpg.asset.json";
+import comeco from "@/assets/vick-185849.jpg";
+import juntos1 from "@/assets/vick-185925.jpg";
+import juntos2 from "@/assets/vick-185948.jpg";
+import ranked from "@/assets/vick-185746.jpg";
+import noite from "@/assets/vick-190000.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -128,7 +128,7 @@ function Index() {
         {/* COMEÇO */}
         <section className="grid items-center gap-10 py-12 md:grid-cols-2">
           <Polaroid
-            src={comeco.url}
+            src={comeco}
             alt="Uma lembrança nossa do começo"
             caption="Lembra disso?"
             tilt="-rotate-3"
@@ -148,13 +148,13 @@ function Index() {
         <section className="py-12 text-center">
           <div className="grid gap-8 sm:grid-cols-2">
             <Polaroid
-              src={juntos1.url}
+              src={juntos1}
               alt="Uma das nossas lembranças juntos"
               caption="Meu lugar preferido é pertinho de você. ♡"
               tilt="-rotate-2"
             />
             <Polaroid
-              src={juntos2.url}
+              src={juntos2}
               alt="Outro momento nosso"
               caption="Olha nós dois… até que a gente combina, né?"
               tilt="rotate-2 sm:mt-8"
@@ -180,7 +180,7 @@ function Index() {
           </div>
           <div className="order-1 md:order-2">
             <Polaroid
-              src={ranked.url}
+              src={ranked}
               alt="Registro de uma ranked juntos"
               caption="Mesmo na derrota, eu continuo te amando."
               tilt="rotate-2"
@@ -191,7 +191,7 @@ function Index() {
         {/* NOITE */}
         <section className="py-12">
           <Polaroid
-            src={noite.url}
+            src={noite}
             alt="Nossa lembrança à noite"
             caption="Se eu pudesse, ficava assim, pertinho de você. ♡"
             tilt="-rotate-1"
